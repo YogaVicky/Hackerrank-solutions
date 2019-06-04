@@ -1,25 +1,18 @@
 #include <iostream>
 using namespace std;
-int compareTriplets(int a[3] , int b[3]){
-    int c[2];
-    int i;
-    for (i = 0; i < 3; i++)
-    {
-        if(a[i] < b[i])
-        c[0]++;
-        else
-        c[1]++;
+int main(){
+    int alice[3];
+    int bob[3];
+    cin>>alice[0]>>alice[1]>>alice[2];
+    cin>>bob[0]>>bob[1]>>bob[2];
+    int score_alice = 0;
+    int score_bob = 0;
+    for (int i = 0; i < 3; i++) {
+      if (alice[i] > bob[i])
+        score_alice++;
+      if (bob[i] > alice[i])
+        score_bob++;
     }
-    return c;
-}
-int main() {
-  int i, a[3], b[3],c[2];
-  cout << "Enter the triplet of alice";
-  for (i = 0; i < 3; i++)
-    cin >> a[i];
-  cout << "Enter the triplet of bob";
-  for (i = 0; i < 3; i++)
-    cin >> b[i];
-  c = compareTriplets(a , b);
-  return 0;
+    cout<<score_alice<<" "<<score_bob;
+    return 0;
 }
