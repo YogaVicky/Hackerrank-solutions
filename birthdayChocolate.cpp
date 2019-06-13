@@ -1,19 +1,20 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int n , a[100] , d , m ,i , j , count;
+    int n , s[100] , d , m ,i , check = 0 , j , tempsum;
     cin>>n;
-    for (i = 0; i < n; i++){
-        cin>>a[i];
+    for(i=0;i<n;i++){
+        cin>>s[i];
     }
-    cin>>d;
-    cin>>m;
-    for(i = 0; i < n; i++){
-        for(k = 0; k < m; k++){
-            for(j = 0; j < n; j++){
-
-            }
+    cin>>d>>m;
+    for(i=0;i<n;i++){
+        tempsum = 0;
+        for(j=i;j<m+i;j++){
+            tempsum += s[j];
         }
+        if(tempsum == d)
+            check++;
     }
+    cout<<check;
     return 0;
 }
