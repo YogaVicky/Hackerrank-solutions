@@ -11,16 +11,12 @@ int main(){
         getline(cin,a[i]);
     }
     for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
+        for(j=0;a[i][j]!='\0';j++){
             if(i!=0 && i!=n-1 && j!=0 && j!=n-1){
-                if( int(a[i][j-1])<=int(a[i][j]) && 
-                	int(a[i][j+1])<=int(a[i][j]) && 
-                	int(a[i+1][j+1])<=int(a[i][j]) && 
-                	int(a[i-1][j-1])<=int(a[i][j]) && 
-                	int(a[i+1][j])<=int(a[i][j]) && 
-                	int(a[i-1][j+1])<=int(a[i][j]) && 
-                	int(a[i1][j-1])<=int(a[i][j]) &&
-                	int(a[i1][j-1])<=int(a[i][j]))
+                if( int(a[i][j-1])<int(a[i][j]) && 
+                	int(a[i][j+1])<int(a[i][j]) && 
+                	int(a[i+1][j])<int(a[i][j]) &&  
+                	int(a[i-1][j])<int(a[i][j]))
                     cout<<"X";
                 else
                     cout<<a[i][j];
