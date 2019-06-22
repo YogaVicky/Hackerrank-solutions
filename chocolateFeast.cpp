@@ -11,9 +11,10 @@ int main(){
     for (i = 0;i<t; i++){
         check = n[i]/c[i];
         count[i] = count[i] + check;
-        while(check>m[i]){
+        // cout<<count[i]<<endl;S
+        while(check>=m[i]){
             count[i]+=check/m[i];
-            check = check/m[i];
+            check = check/m[i] + check%m[i];
             // check= check - check/m[i] + check%m[i];
         }
     }
