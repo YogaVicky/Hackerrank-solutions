@@ -1,18 +1,22 @@
-#include <iostream>
-#include<string>
-#include<math.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
-	int i , res[100] = {0};
-	int n;
-	cin>>n;
-	for(i=0;i<n;i++){
-		if(i%2==0)
-			res[i]++;
-	}
-	for(i=0;i<n;i++){
-		cout<<res[i]<<" ";
-	}
-	cout<<endl;
-	return 0;
+/*
+    *
+    * Prosen Ghosh
+    * American International University - Bangladesh (AIUB)
+    *
+*/
+int main() {
+    int T,n;
+    cin >> T;
+    for(int t = 0; t < T; t++){
+        cin >> n;
+        int ar[n],sum = 0;
+        for(int i = 0; i < n; i++)cin >> ar[i];
+        for(int i = 0; i < n; i++){
+            for(int j = i+1; j < n; j++)if(ar[j] < ar[i])sum += 1; 
+        }
+        (sum%2 == 0) ? cout << "YES" << endl : cout << "NO" << endl;
+    }
+    return 0;
 }
