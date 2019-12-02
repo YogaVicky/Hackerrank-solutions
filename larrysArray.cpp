@@ -1,64 +1,88 @@
-#include <iostream>
-#include<string>
-#include<math.h>
+#include<iostream>
+#include<string.h>
 using namespace std;
 int main(){
-	int t , count[10] , i;
+	int t , i , j , a[1000] , c , n , k;
 	cin>>t;
 	for(i=0;i<t;i++){
-		int a[1000] , j , n , check = 0  , temp , check2 = 0;
+		c = 0;
 		cin>>n;
-
-		for(j=0;j<n;j++){
+		for(j=0;j<n;j++)
 			cin>>a[j];
-		}
-		while(check2 == 0){
-			for(j=0;j<n-2;j++){
-				if(a[j]>a[j+1]){
-					temp = a[j];
-					a[j] = a[j+1];
-					a[j+1] = a[j+2];
-					a[j+2] = temp;
-					// for(j=0;j<n;j++){
-					// 	cout<<a[j];
-					// }
-					// cout<<endl;
-					break;
-				}
-				if(j==n-3){
-					check2 = 1;
-					break;
-				}
+		for(j=0;j<n-1;j++)
+			for(k=j+1;k<n;k++){
+				if(a[j]>a[k])
+					c++;
 			}
-		}
-
-		if(a[n-3]-a[n-1] == 1){
-			temp = a[n-3];
-			a[n-3] = a[n-1];
-			a[n-1] = a[n-2];
-			a[n-2] = temp;
-		}
-
-		// cout<<endl;
-		// for(j=0;j<n;j++){
-		// 	cout<<a[j];
-		// }
-		// cout<<endl;
-		for(j=0;j<n-1;j++){
-			if(a[j+1]-a[j]!=1){
-				check = 1;
-				break;
-			}
-		}
-
-		count[i] = check;
-	
-	}
-	for(i=0;i<t;i++){
-		if(count[i] == 0)
+		if(c%2 == 0)
 			cout<<"YES"<<endl;
 		else
 			cout<<"NO"<<endl;
 	}
 	return 0;
 }
+
+// #include <iostream>
+// #include<string>
+// #include<math.h>
+// using namespace std;
+// int main(){
+// 	int t , count[10] , i;
+// 	cin>>t;
+// 	for(i=0;i<t;i++){
+// 		int a[1000] , j , n , check = 0  , temp , check2 = 0;
+// 		cin>>n;
+
+// 		for(j=0;j<n;j++){
+// 			cin>>a[j];
+// 		}
+// 		while(check2 == 0){
+// 			for(j=0;j<n-2;j++){
+// 				if(a[j]>a[j+1]){
+// 					temp = a[j];
+// 					a[j] = a[j+1];
+// 					a[j+1] = a[j+2];
+// 					a[j+2] = temp;
+// 					// for(j=0;j<n;j++){
+// 					// 	cout<<a[j];
+// 					// }
+// 					// cout<<endl;
+// 					break;
+// 				}
+// 				if(j==n-3){
+// 					check2 = 1;
+// 					break;
+// 				}
+// 			}
+// 		}
+
+// 		if(a[n-3]-a[n-1] == 1){
+// 			temp = a[n-3];
+// 			a[n-3] = a[n-1];
+// 			a[n-1] = a[n-2];
+// 			a[n-2] = temp;
+// 		}
+
+// 		// cout<<endl;
+// 		// for(j=0;j<n;j++){
+// 		// 	cout<<a[j];
+// 		// }
+// 		// cout<<endl;
+// 		for(j=0;j<n-1;j++){
+// 			if(a[j+1]-a[j]!=1){
+// 				check = 1;
+// 				break;
+// 			}
+// 		}
+
+// 		count[i] = check;
+	
+// 	}
+// 	for(i=0;i<t;i++){
+// 		if(count[i] == 0)
+// 			cout<<"YES"<<endl;
+// 		else
+// 			cout<<"NO"<<endl;
+// 	}
+// 	return 0;
+// }
